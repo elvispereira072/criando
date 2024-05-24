@@ -12,19 +12,16 @@
             font-family: Arial, sans-serif;
             color: #fff;
             overflow-x: hidden;
+            height: 100%;
         }
         .video-background {
             position: fixed;
-            right: 0;
-            bottom: 0;
-            min-width: 100%;
-            min-height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             z-index: -1;
-        }
-        .content {
-            position: relative;
-            z-index: 2;
-            padding: 20px;
         }
         .overlay {
             position: fixed;
@@ -34,6 +31,17 @@
             height: 100%;
             background: rgba(0, 0, 0, 0.5);
             z-index: 1;
+            pointer-events: none;
+            animation: overlayFadeIn 2s ease-in-out;
+        }
+        @keyframes overlayFadeIn {
+            from { opacity: 0; }
+            to { opacity: 0.5; }
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
         }
         nav {
             background: rgba(0, 0, 0, 0.7);
@@ -45,7 +53,7 @@
             color: #fff;
             margin: 0 15px;
             text-decoration: none;
-            transition: color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
         nav a:hover {
             color: #fff;
@@ -91,6 +99,12 @@
             background: rgba(0, 0, 0, 0.7);
             padding: 15px;
             margin-bottom: 20px;
+            border-radius: 10px;
+            animation: contentFadeIn 2s ease-in-out;
+        }
+        @keyframes contentFadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         .product img {
             max-width: 100%;
@@ -245,4 +259,5 @@
     </script>
 </body>
 </html>
+
 

@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Vídeo de Fundo e Efeitos Especiais</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            overflow-x: hidden;
+        }
+        .video-background {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        nav {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #fff;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            padding: 5px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+        }
+        .menu-items {
+            display: flex;
+            justify-content: center;
+        }
+        .menu-items a {
+            display: inline-block;
+        }
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
+            .menu-items {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+            }
+            .menu-items a {
+                margin: 10px 0;
+            }
+            .menu-items.active {
+                display: flex;
+            }
+        }
+        section {
+            margin: 20px 0;
+        }
+        .product, .faq, .testimonial, .contact-form, .social-media, .location, .info {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .product img {
+            max-width: 100%;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            text-align: center;
+        }
+        @media (max-width: 480px) {
+            .content {
+                padding: 10px;
+            }
+            nav {
+                padding: 5px;
+            }
+            .product, .faq, .testimonial, .contact-form, .social-media, .location, .info {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video autoplay muted loop class="video-background">
+        <source src="video-de-fundo.mp4" type="video/mp4">
+        Seu navegador não suporta a tag de vídeo.
+    </video>
+    <div class="overlay"></div>
+
+    <nav class="content">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </div>
+        <div class="menu-items">
+            <a href="#home"><i class="fas fa-home"></i> Home</a>
+            <a href="#about"><i class="fas fa-info-circle"></i> Sobre</a>
+            <a href="#products"><i class="fas fa-box"></i> Produtos</a>
+            <a href="#special-offers"><i class="fas fa-tags"></i> Ofertas Especiais</a>
+            <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+            <a href="#testimonials"><i class="fas fa-comment-alt"></i> Depoimentos</a>
+            <a href="#contact"><i class="fas fa-envelope"></i> Contato</a>
+        </div>
+    </nav>
+
+    <div class="content">
+        <section id="about">
+            <h2>Título</h2>
+            <p>Parágrafo sobre a história do site.</p>
+        </section>
+
+        <section id="products">
+            <div class="product">
+                <h2>Produto</h2>
+                <img src="produto.jpg" alt="Imagem do Produto">
+                <p>Descrição do produto.</p>
+                <p>Preço: R$100,00</p>
+                <button>Comprar</button>
+                <p>Desconto: 10%</p>
+            </div>
+        </section>
+
+        <section id="special-offers">
+            <h2>Ofertas Especiais</h2>
+            <p>Especial de fim de semana: Compre um leve outro.</p>
+            <p>Combinação: Desconto especial para compras combinadas.</p>
+        </section>
+
+        <section id="faq">
+            <h2>FAQ</h2>
+            <p>Quais tipos de pagamentos você aceita?</p>
+            <p>Resposta.</p>
+            <p>Vocês oferecem frete internacional?</p>
+            <p>Resposta.</p>
+            <p>Qual a sua política de devolução?</p>
+            <p>Resposta.</p>
+        </section>
+
+        <section id="testimonials">
+            <h2>Depoimentos</h2>
+            <div class="testimonial">
+                <p>"Depoimento 1"</p>
+            </div>
+            <div class="testimonial">
+                <p>"Depoimento 2"</p>
+            </div>
+            <div class="testimonial">
+                <p>"Depoimento 3"</p>
+            </div>
+            <div class="testimonial">
+                <p>"Depoimento 4"</p>
+            </div>
+            <div class="testimonial">
+                <p>"Depoimento 5"</p>
+            </div>
+            <div class="testimonial">
+                <p>"Depoimento 6"</p>
+            </div>
+            <div class="testimonial">
+                <p>"Depoimento 7"</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Formulário de Contato</h2>
+            <form action="https://api.staticforms.xyz/submit" method="POST">
+                <input type="hidden" name="accessKey" value="YOUR_ACCESS_KEY_HERE">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Mensagem:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+        <section id="social-media">
+            <h2>Mídias Sociais</h2>
+            <a href="https://facebook.com"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="https://instagram.com"><i class="fab fa-instagram"></i> Instagram</a>
+            <a href="https://linkedin.com"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            <a href="https://whatsapp.com"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+            <a href="https://telegram.org"><i class="fab fa-telegram-plane"></i> Telegram</a>
+            <a href="https://youtube.com"><i class="fab fa-youtube"></i> YouTube</a>
+            <a href="https://twitter.com"><i class="fab fa-twitter"></i> Twitter</a>
+        </section>
+
+        <section id="location">
+            <h2>Localização</h2>
+            <p>Informação sobre a localização do site.</p>
+        </section>
+
+        <section id="info">
+            <h2>Informação</h2>
+            <p>Transporte público: Detalhes.</p>
+            <p>Estacionamento: Detalhes.</p>
+            <p>Atrações locais: Detalhes.</p>
+            <p>Descontos: Detalhes.</p>
+            <p>Horário de funcionamento: Detalhes.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Rodapé</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menuItems = document.querySelector('.menu-items');
+            menuItems.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>
+
